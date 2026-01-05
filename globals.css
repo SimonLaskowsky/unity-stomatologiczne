@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #080d14;
+  --color-foreground: #f0f2f5;
+
+  --color-card: #0a1018;
+  --color-card-foreground: #f0f2f5;
+
+  --color-popover: #0a1018;
+  --color-popover-foreground: #f0f2f5;
+
+  --color-primary: #2db3a4;
+  --color-primary-foreground: #080d14;
+
+  --color-secondary: #19202b;
+  --color-secondary-foreground: #d9dde3;
+
+  --color-muted: #151b25;
+  --color-muted-foreground: #7d8896;
+
+  --color-accent: #319b8e;
+  --color-accent-foreground: #f0f2f5;
+
+  --color-destructive: #f03e3e;
+  --color-destructive-foreground: #fafbfc;
+
+  --color-border: #212835;
+  --color-input: #212835;
+  --color-ring: #2db3a4;
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  /* Custom gradient tokens */
+  :root {
+    --gradient-hero: linear-gradient(135deg, #080d14 0%, #0d1621 50%, #0a1218 100%);
+    --gradient-card: linear-gradient(145deg, #0d1621 0%, #09111a 100%);
+    --gradient-accent: linear-gradient(135deg, #2db3a4 0%, #319b8e 100%);
+    --gradient-text: linear-gradient(135deg, #f0f2f5 0%, #5cd4c3 100%);
+
+    --shadow-glow: 0 0 60px -15px rgba(45, 179, 164, 0.3);
+    --shadow-card: 0 25px 50px -12px rgba(6, 12, 20, 0.5);
+    --shadow-elevated: 0 10px 40px -10px rgba(6, 12, 20, 0.6);
+  }
+
+  * {
+    border-color: theme(colors.border);
+  }
+
+  
+  h1, h2 {
+    font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  }
+  
+  h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  body {
+    background-color: theme(colors.background);
+    color: theme(colors.foreground);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-cormorant {
+    font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .bg-card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .bg-accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
