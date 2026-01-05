@@ -17,13 +17,17 @@ const CTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl">
-              Umów Konsultację
-              <ArrowRight className="w-5 h-5 ml-2" />
+            <Button variant="hero" size="xl" asChild>
+              <a href="mailto:kontakt@unitystomatologiczne.pl">
+                Umów Konsultację
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
             </Button>
-            <Button variant="heroOutline" size="xl">
-              <Phone className="w-5 h-5 mr-2" />
-              Zadzwoń Teraz
+            <Button variant="heroOutline" size="xl" asChild>
+              <a href="tel:+48123456789">
+                <Phone className="w-5 h-5 mr-2" />
+                Zadzwoń Teraz
+              </a>
             </Button>
           </div>
         </div>

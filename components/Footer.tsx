@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer id="contact" className="bg-card border-t border-border">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
@@ -36,11 +36,11 @@ const Footer = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-center gap-3 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary" />
-                <span>+48 123 456 789</span>
+                <a href="tel:+48123456789" className="hover:underline">+48 123 456 789</a>
               </li>
               <li className="flex items-center gap-3 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>kontakt@unitystomatologiczne.pl</span>
+                <a href="mailto:kontakt@unitystomatologiczne.pl" className="hover:underline">kontakt@unitystomatologiczne.pl</a>
               </li>
               <li className="flex items-center gap-3 hover:text-primary transition-colors">
                 <MapPin className="w-4 h-4 text-primary" />

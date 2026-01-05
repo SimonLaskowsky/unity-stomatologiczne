@@ -39,13 +39,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.45s' }}>
-            <Button variant="hero" size="xl">
-              Rozpocznij
-              <ArrowRight className="w-5 h-5 ml-2" />
+            <Button variant="hero" size="xl" asChild>
+              <a href="#contact">
+                Umów Konsultację
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
             </Button>
-            <Button variant="heroOutline" size="xl">
-              <Play className="w-5 h-5 mr-2" />
-              Zobacz Nasz Proces
+            <Button variant="heroOutline" size="xl" asChild>
+              <a href="#services">
+                <Play className="w-5 h-5 mr-2" />
+                Zobacz Usługi
+              </a>
             </Button>
           </div>
 

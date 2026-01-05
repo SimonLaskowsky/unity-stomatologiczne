@@ -12,7 +12,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-24 bg-card">
+    <section id="services" className="py-24 bg-card">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="animate-fade-up">
@@ -39,8 +39,8 @@ const Services = () => {
               ))}
             </ul>
 
-            <Button variant="hero" size="lg">
-              Otrzymaj Darmową Wycenę
+            <Button variant="hero" size="lg" asChild>
+              <a href="#contact">Otrzymaj Darmową Wycenę</a>
             </Button>
           </div>
 

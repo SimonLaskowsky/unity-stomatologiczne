@@ -20,7 +20,6 @@ const Header = () => {
   const navLinks = [
     { label: "Usługi", href: "#services" },
     { label: "O nas", href: "#about" },
-    { label: "Proces", href: "#process" },
     { label: "Kontakt", href: "#contact" }
   ];
 
@@ -40,7 +39,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -53,15 +52,15 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="hero" size="default">
-              Darmowa Konsultacja
+          <div className="hidden lg:block">
+            <Button variant="hero" size="default" asChild>
+              <a href="#contact">Darmowa Konsultacja</a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground p-2"
+            className="lg:hidden text-foreground p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -70,7 +69,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-card border-t border-border py-6 animate-fade-up">
+          <div className="lg:hidden bg-card border-t border-border py-6 animate-fade-up">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
@@ -83,8 +82,8 @@ const Header = () => {
                 </a>
               ))}
               <div className="px-4 pt-4">
-                <Button variant="hero" size="lg" className="w-full">
-                  Darmowa Konsultacja
+                <Button variant="hero" size="lg" className="w-full" asChild>
+                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Darmowa Konsultacja</a>
                 </Button>
               </div>
             </nav>
